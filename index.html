@@ -3,373 +3,1215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web3 Development Training — Pricing</title>
+  <title>Web3 Development Training — Pricing | Marbles Tech</title>
+  <meta name="description" content="Beginner to advanced Web3 training packages: blockchain foundations, Solidity smart contract development, and full-stack dApp development.">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marbles Tech">
+  <meta property="og:title" content="Web3 Development Training — Pricing">
+  <meta property="og:description" content="Beginner to advanced Web3 packages: blockchain foundations, Solidity smart contracts, and full-stack dApp development. Compare plans and enroll.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web3 Development Training — Pricing">
+  <meta name="twitter:description" content="Beginner to advanced Web3 packages: blockchain foundations, Solidity smart contracts, and full-stack dApp development.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%234f46e5'/><path d='M18 46V18h6l8 12 8-12h6v28h-6V30l-8 12-8-12v16z' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;
-      --surface: #141b33;
-      --surface-alt: #1b2442;
-      --text: #e8ecf8;
-      --muted: #a9b3d1;
-      --accent: #6c8cff;
-      --accent-2: #22c55e;
-      --border: #273153;
-      --highlight: #f59e0b;
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-2: #fbfcfe;
+      --ink: #0b1020;
+      --ink-soft: #2a3350;
+      --muted: #5c6580;
+      --border: #e5e8f1;
+      --border-strong: #d3d9e8;
+      --primary: #4f46e5;
+      --primary-strong: #4338ca;
+      --violet: #7c3aed;
+      --emerald: #0f9f6e;
+      --emerald-bright: #34d399;
+      --emerald-soft: #e7f7f0;
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 1px 2px rgba(13, 20, 45, .06);
+      --shadow-md: 0 18px 40px -22px rgba(13, 20, 45, .28);
+      --shadow-lg: 0 40px 80px -40px rgba(13, 20, 45, .45);
+      --maxw: 1160px;
     }
+
     * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #0b1020 0%, #0f1730 100%);
-      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
       line-height: 1.6;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 620px at 50% -12%, rgba(79, 70, 229, .09), transparent 62%),
+        var(--bg);
+      overflow-x: clip;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 20px 64px;
+
+    #pricing,
+    #compare,
+    #contact { scroll-margin-top: 88px; }
+
+    body.no-scroll { overflow: hidden; }
+
+    h1, h2, h3 {
+      font-family: Sora, Inter, sans-serif;
+      font-weight: 800;
+      color: var(--ink);
     }
-    header {
-      text-align: center;
-      margin-bottom: 48px;
+
+    a { color: var(--primary); }
+    img, svg { display: block; }
+
+    :focus-visible {
+      outline: 3px solid rgba(79, 70, 229, .4);
+      outline-offset: 2px;
+      border-radius: 6px;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0 0 12px;
-      letter-spacing: -0.02em;
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    section { margin-bottom: 48px; }
-    h2 {
-      font-size: 1.5rem;
-      margin: 0 0 20px;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 800px;
-    }
-    th, td {
-      padding: 16px 18px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border);
-    }
-    th {
-      background: var(--surface-alt);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    tr:last-child td { border-bottom: none; }
-    td.price {
-      font-weight: 700;
-      color: var(--accent-2);
-      white-space: nowrap;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-    }
-    .card.featured {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(108, 140, 255, 0.25), 0 10px 30px rgba(0,0,0,0.25);
-    }
-    .badge {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent);
-      background: rgba(108, 140, 255, 0.12);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.3rem;
-    }
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    .price-tag {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 4px 0 16px;
-    }
-    .desc {
-      color: var(--muted);
-      margin: 0 0 16px;
-    }
-    .card h4 {
-      margin: 0 0 8px;
-      font-size: 0.95rem;
-      color: #fff;
-    }
-    ul {
-      margin: 0 0 16px;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-    li { margin-bottom: 6px; }
-    .best-for {
-      margin-top: auto;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .best-for strong { color: var(--text); }
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 16px;
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 8px;
+      z-index: 200;
+      background: #fff;
+      color: var(--ink);
+      padding: 10px 14px;
       border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      text-align: center;
+      box-shadow: var(--shadow-md);
     }
-    .btn:hover { filter: brightness(1.1); }
-    button.btn {
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 1rem;
+    .skip:focus { left: 8px; }
+
+    .container {
+      width: min(var(--maxw), 100% - 40px);
+      margin-inline: auto;
     }
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(3, 6, 16, 0.75);
-      display: none;
+
+    .btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      z-index: 50;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: .98rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
     }
-    .modal-overlay.open { display: flex; }
-    .modal {
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #5b52f0 0%, #4338ca 100%);
+      color: #fff;
+      box-shadow: 0 12px 26px -14px rgba(79, 70, 229, .75);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px -16px rgba(79, 70, 229, .85);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border-strong);
+      color: var(--ink);
+    }
+    .btn-ghost:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #111735;
+      box-shadow: 0 14px 30px -18px rgba(0, 0, 0, .55);
+    }
+    .btn-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px -18px rgba(0, 0, 0, .6);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #12b981 0%, #0f9f6e 100%);
+      color: #fff;
+      box-shadow: 0 12px 26px -16px rgba(15, 159, 110, .8);
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px -16px rgba(15, 159, 110, .9);
+    }
+
+    .btn-email {
+      background: #fff;
+      border-color: var(--border-strong);
+      color: var(--ink);
+    }
+    .btn-email:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border-color: rgba(255, 255, 255, .32);
+      color: #fff;
+    }
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, .1);
+      transform: translateY(-2px);
+    }
+
+    .btn-block { width: 100%; }
+    .btn-sm { min-height: 40px; padding: 9px 16px; font-size: .9rem; border-radius: 10px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(246, 247, 251, .72);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, .86);
+      border-bottom-color: var(--border);
+      box-shadow: 0 10px 30px -26px rgba(13, 20, 45, .6);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: auto;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #5b52f0, #7c3aed);
+      color: #fff;
+      font-family: Sora, sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 20px -12px rgba(79, 70, 229, .9);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      font-family: Sora, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-family: Inter, sans-serif;
+      font-weight: 500;
+      font-size: .68rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 500;
+      padding: 6px 2px;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .hero {
+      position: relative;
+      padding: clamp(56px, 8vw, 100px) 0 clamp(30px, 5vw, 52px);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -30% -10% auto -10%;
+      height: 560px;
+      background:
+        radial-gradient(38% 58% at 18% 22%, rgba(79, 70, 229, .16), transparent 70%),
+        radial-gradient(34% 54% at 82% 12%, rgba(124, 58, 237, .14), transparent 70%),
+        radial-gradient(30% 50% at 58% 48%, rgba(14, 165, 233, .1), transparent 70%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, .08);
+      border: 1px solid rgba(79, 70, 229, .16);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, .15);
+    }
+
+    .hero h1 {
+      margin: 22px 0 0;
+      font-size: clamp(2.2rem, 5.4vw, 3.7rem);
+      line-height: 1.04;
+      letter-spacing: -.035em;
+    }
+    .grad {
+      background: linear-gradient(100deg, #4f46e5 0%, #7c3aed 55%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lede {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(20px, 4vw, 46px);
+      margin: 44px 0 0;
+      padding: 0;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2px;
+    }
+    .stat dd {
+      margin: 0;
+      font-family: Sora, sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .stat dt {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section { padding: clamp(44px, 7vw, 80px) 0; }
+
+    .section-head {
+      max-width: 680px;
+      margin: 0 auto clamp(30px, 5vw, 46px);
+      text-align: center;
+    }
+    .section-head h2 {
+      margin: 16px 0 0;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      letter-spacing: -.03em;
+      line-height: 1.15;
+    }
+    .section-sub {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .plan {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      width: 100%;
-      max-width: 480px;
-      position: relative;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-    .modal h3 { margin: 0 0 6px; }
-    .modal .msg {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      white-space: pre-wrap;
-      margin: 14px 0 18px;
+    .plan:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
     }
-    .modal-actions {
+
+    .plan-top {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
+      min-height: 26px;
+      margin-bottom: 16px;
+    }
+    .level {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, .09);
+      color: var(--primary);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .pop {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #5b52f0, #7c3aed);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 20px -12px rgba(124, 58, 237, .95);
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+    .plan-desc {
+      min-height: 2.9em;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.55;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3px;
+      margin-top: 20px;
+      font-family: Sora, sans-serif;
+    }
+    .currency {
+      margin-top: 7px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .amount {
+      font-size: clamp(2.05rem, 2.6vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .plan-meta {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .plan-divider {
+      height: 1px;
+      margin: 22px 0 18px;
+      background: var(--border);
+    }
+
+    .inc-label {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .features li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--ink-soft);
+      font-size: .94rem;
+      line-height: 1.45;
+    }
+    .features li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--emerald-soft);
+    }
+    .features li::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 6px;
+      width: 8px;
+      height: 4.5px;
+      border-left: 2px solid var(--emerald);
+      border-bottom: 2px solid var(--emerald);
+      transform: rotate(-45deg);
+    }
+
+    .best-for {
+      margin: auto 0 18px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+    .best-for strong { color: var(--ink-soft); font-weight: 600; }
+
+    .plan--featured {
+      color: #fff;
+      background: linear-gradient(180deg, #141c3f 0%, #0d1330 100%);
+      border-color: rgba(124, 58, 237, .5);
+      box-shadow:
+        0 30px 60px -30px rgba(18, 24, 60, .55),
+        inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+    .plan--featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(120% 60% at 50% 0%, rgba(124, 58, 237, .28), transparent 62%);
+      pointer-events: none;
+    }
+    .plan--featured > * { position: relative; }
+    .plan--featured:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 40px 70px -32px rgba(18, 24, 60, .65),
+        inset 0 1px 0 rgba(255, 255, 255, .1);
+    }
+    .plan--featured .plan-name,
+    .plan--featured .amount { color: #fff; }
+    .plan--featured .currency { color: #c3c9e0; }
+    .plan--featured .plan-desc,
+    .plan--featured .plan-meta,
+    .plan--featured .best-for { color: #aab4d4; }
+    .plan--featured .level {
+      color: #c7c9ff;
+      background: rgba(255, 255, 255, .08);
+    }
+    .plan--featured .plan-divider { background: rgba(255, 255, 255, .12); }
+    .plan--featured .inc-label { color: #8f9ac0; }
+    .plan--featured .features li { color: #d7ddf0; }
+    .plan--featured .features li::before { background: rgba(52, 211, 153, .16); }
+    .plan--featured .features li::after { border-color: var(--emerald-bright); }
+    .plan--featured .best-for { border-top-color: rgba(255, 255, 255, .14); }
+    .plan--featured .best-for strong { color: #fff; }
+
+    .table-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .table-scroll { overflow-x: auto; }
+    .cmp {
+      width: 100%;
+      min-width: 840px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+    .cmp thead th {
+      padding: 16px 18px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .cmp tbody td {
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink-soft);
+      line-height: 1.55;
+      vertical-align: top;
+    }
+    .cmp tbody tr:last-child td { border-bottom: none; }
+    .cmp .name { font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .cmp .price-cell { font-weight: 700; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .cmp .hot { background: rgba(79, 70, 229, .045); }
+    .cmp thead th.hot { color: var(--primary); }
+    .cmp thead th:first-child,
+    .cmp tbody td:first-child {
+      position: sticky;
+      left: 0;
+      background: var(--surface);
+      z-index: 2;
+    }
+    .cmp thead th:first-child { background: var(--surface-2); }
+
+    .table-hint {
+      display: none;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    .cta {
+      position: relative;
+      display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: clamp(28px, 5vw, 52px);
+      border-radius: 24px;
+      background: linear-gradient(135deg, #121a3d 0%, #1b2352 55%, #241a4f 100%);
+      color: #fff;
+      box-shadow: 0 40px 70px -44px rgba(18, 24, 60, .8);
+      overflow: hidden;
     }
-    .modal-actions .btn {
-      flex: 1 1 160px;
-      margin-top: 0;
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(60% 80% at 88% 0%, rgba(124, 58, 237, .4), transparent 62%),
+        radial-gradient(50% 70% at 0% 100%, rgba(14, 165, 233, .25), transparent 62%);
+      pointer-events: none;
     }
-    .btn-whatsapp { background: #22c55e; }
+    .cta > * { position: relative; }
+    .cta h2 {
+      margin: 14px 0 0;
+      font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+      letter-spacing: -.03em;
+      line-height: 1.2;
+      color: #fff;
+    }
+    .cta p {
+      max-width: 520px;
+      margin: 10px 0 0;
+      color: #b9c2e0;
+    }
+    .eyebrow-light {
+      color: #c7c9ff;
+      background: rgba(255, 255, 255, .08);
+      border-color: rgba(255, 255, 255, .16);
+    }
+    .eyebrow-light .dot { box-shadow: 0 0 0 3px rgba(199, 201, 255, .18); }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .site-footer {
+      margin-top: clamp(40px, 6vw, 72px);
+      padding: 40px 0 24px;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 70%);
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .footer-brand p {
+      max-width: 300px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-content: flex-start;
+    }
+    .footer-links a,
+    .footer-contact a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: .92rem;
+      transition: color .2s ease;
+    }
+    .footer-links a:hover,
+    .footer-contact a:hover { color: var(--primary); }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right;
+    }
+    .footer-bottom {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-bottom p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(8, 12, 30, .55);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+    .overlay.open { opacity: 1; visibility: visible; }
+
+    .modal {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      max-height: 92vh;
+      overflow: auto;
+      padding: 26px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 40px 90px -30px rgba(8, 12, 30, .55);
+      transform: translateY(14px) scale(.985);
+      transition: transform .28s cubic-bezier(.2, .8, .2, 1);
+    }
+    .overlay.open .modal { transform: none; }
+
     .modal-close {
       position: absolute;
-      top: 8px;
-      right: 12px;
-      background: none;
-      border: none;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
       color: var(--muted);
-      font-size: 1.6rem;
+      font-family: inherit;
+      font-size: 1.25rem;
       line-height: 1;
       cursor: pointer;
+      transition: background .2s ease, color .2s ease;
     }
-    .contact {
-      text-align: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
+    .modal-close:hover { background: var(--surface-2); color: var(--ink); }
+
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-right: 36px;
     }
-    .contact a { color: var(--accent); }
-    footer {
-      text-align: center;
+    .modal-icon {
+      flex: none;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #5b52f0, #7c3aed);
+      color: #fff;
+      box-shadow: 0 12px 24px -14px rgba(79, 70, 229, .9);
+    }
+    .modal h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+    }
+    .modal-sub {
+      margin: 4px 0 0;
       color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 24px;
+      font-size: .9rem;
+      line-height: 1.5;
     }
-    @media (max-width: 640px) {
-      h1 { font-size: 2rem; }
-      .container { padding-top: 32px; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .msg-label {
+      margin: 20px 0 8px;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .msg {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-size: .92rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lede,
+    .hero-actions,
+    .hero-stats {
+      animation: rise .7s cubic-bezier(.2, .8, .2, 1) both;
+    }
+    .hero h1 { animation-delay: .05s; }
+    .hero .lede { animation-delay: .12s; }
+    .hero-actions { animation-delay: .2s; }
+    .hero-stats { animation-delay: .28s; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .plans .plan:nth-child(2) { transition-delay: .08s; }
+    .plans .plan:nth-child(3) { transition-delay: .16s; }
+
+    @media (min-width: 640px) {
+      .stat + .stat {
+        padding-left: clamp(20px, 4vw, 46px);
+        border-left: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .plans {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        margin-inline: auto;
+        gap: 26px;
+      }
+      .plan--featured { order: -1; }
+      .plan-desc { min-height: 0; }
+    }
+
+    @media (max-width: 860px) {
+      .table-hint { display: block; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .nav { height: 64px; }
+      .section { padding: 44px 0; }
+      .cta { border-radius: 20px; }
+      .footer-contact { text-align: left; }
+    }
+
+    @media (max-width: 460px) {
+      .container { width: min(var(--maxw), 100% - 32px); }
+      .brand-sub { display: none; }
+      .brand-text { font-size: .95rem; }
+      .hero-actions .btn { width: 100%; }
+      .modal { padding: 22px; border-radius: 18px; }
+      .modal-actions { grid-template-columns: 1fr; }
+      .plan { padding: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+      .hero .eyebrow,
+      .hero h1,
+      .hero .lede,
+      .hero-actions,
+      .hero-stats,
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Web3 Development Training</h1>
-      <p class="subtitle">Choose the package that matches your goals, from blockchain basics to building and deploying full-stack dApps.</p>
-    </header>
+  <noscript>
+    <style>
+      .reveal,
+      .hero .eyebrow,
+      .hero h1,
+      .hero .lede,
+      .hero-actions,
+      .hero-stats {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 
-    <section aria-labelledby="comparison-heading">
-      <h2 id="comparison-heading">Package Comparison</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Package</th>
-              <th>Level</th>
-              <th>Price</th>
-              <th>Duration</th>
-              <th>Classes</th>
-              <th>What You'll Learn</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Web3 Foundations</strong></td>
-              <td>Beginner</td>
-              <td class="price">₦30,000</td>
-              <td>2 weeks</td>
-              <td>4</td>
-              <td>Blockchain fundamentals, Introduction to Web3, Ethereum basics, Wallets and transactions, Gas fees and testnets</td>
-            </tr>
-            <tr>
-              <td><strong>Blockchain &amp; Solidity Development</strong></td>
-              <td>Intermediate</td>
-              <td class="price">₦75,000</td>
-              <td>2 months</td>
-              <td>16</td>
-              <td>Everything in Foundations, Solidity programming, Smart contracts, Remix IDE, ERC-20 and ERC-721 concepts, Testing and debugging, Security fundamentals</td>
-            </tr>
-            <tr>
-              <td><strong>Full-Stack Web3 Development</strong></td>
-              <td>Advanced</td>
-              <td class="price">₦150,000</td>
-              <td>3 months</td>
-              <td>24</td>
-              <td>Everything in Package 2, React development, Wagmi and Viem, Smart contract integration, dApp development, Testing and deployment, Final portfolio project</td>
-            </tr>
-          </tbody>
-        </table>
+  <a class="skip" href="#pricing">Skip to pricing</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Marbles Tech — home">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-text">
+          Marbles Tech
+          <span class="brand-sub">Web3 Academy</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#pricing">Packages</a>
+        <a href="#compare">Compare</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#pricing">Enroll now</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Web3 Development Training</span>
+        <h1>Go from blockchain basics to <span class="grad">full-stack dApps</span>.</h1>
+        <p class="lede">Three focused packages that build on each other — start with the fundamentals and progress to building, testing, and deploying complete decentralized applications.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">View packages</a>
+          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+        </div>
+        <dl class="hero-stats">
+          <div class="stat">
+            <dt>Packages</dt>
+            <dd>3</dd>
+          </div>
+          <div class="stat">
+            <dt>Classes</dt>
+            <dd>4–24</dd>
+          </div>
+          <div class="stat">
+            <dt>Level</dt>
+            <dd>Beginner → Advanced</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <section aria-labelledby="pricing-heading">
-      <h2 id="pricing-heading">Pricing &amp; Curriculum</h2>
-      <div class="cards">
-        <article class="card">
-          <span class="badge">Beginner</span>
-          <h3>Web3 Foundations</h3>
-          <div class="meta">2 weeks · 4 classes</div>
-          <div class="price-tag">₦30,000</div>
-          <p class="desc">Build a strong foundation in blockchain and Web3 concepts.</p>
-          <h4>Curriculum</h4>
-          <ul>
-            <li>Blockchain fundamentals</li>
-            <li>Introduction to Web3</li>
-            <li>Ethereum basics</li>
-            <li>Wallets and transactions</li>
-            <li>Gas fees and testnets</li>
-          </ul>
-          <p class="best-for"><strong>Best for:</strong> Beginners looking to understand how blockchain and Web3 work.</p>
-          <button class="btn enroll-btn" type="button" data-package="Web3 Foundations" data-price="₦30,000" data-duration="2 weeks" data-classes="4">Enroll Now</button>
-        </article>
+    <section class="section" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Pricing</span>
+          <h2 id="pricing-heading">Choose your depth</h2>
+          <p class="section-sub">Every package includes the one before it, so you never repeat or miss a step.</p>
+        </div>
 
-        <article class="card featured">
-          <span class="badge">Intermediate</span>
-          <h3>Blockchain &amp; Solidity Development</h3>
-          <div class="meta">2 months · 16 classes</div>
-          <div class="price-tag">₦75,000</div>
-          <p class="desc">Learn to write, test, and secure smart contracts on Ethereum.</p>
-          <h4>Curriculum</h4>
-          <ul>
-            <li>Everything in Web3 Foundations</li>
-            <li>Solidity programming</li>
-            <li>Smart contracts</li>
-            <li>Remix IDE</li>
-            <li>ERC-20 and ERC-721 concepts</li>
-            <li>Testing and debugging</li>
-            <li>Security fundamentals</li>
-          </ul>
-          <p class="best-for"><strong>Best for:</strong> Learners ready to start building smart contracts and blockchain applications.</p>
-          <button class="btn enroll-btn" type="button" data-package="Blockchain &amp; Solidity Development" data-price="₦75,000" data-duration="2 months" data-classes="16">Enroll Now</button>
-        </article>
+        <div class="plans">
+          <article class="plan reveal">
+            <div class="plan-top">
+              <span class="level">Beginner</span>
+            </div>
+            <h3 class="plan-name">Web3 Foundations</h3>
+            <p class="plan-desc">Build a strong foundation in blockchain and Web3 concepts.</p>
+            <div class="price-row">
+              <span class="currency">₦</span><span class="amount">30,000</span>
+            </div>
+            <p class="plan-meta">2 weeks · 4 classes</p>
+            <div class="plan-divider" aria-hidden="true"></div>
+            <p class="inc-label">What's included</p>
+            <ul class="features">
+              <li>Blockchain fundamentals</li>
+              <li>Introduction to Web3</li>
+              <li>Ethereum basics</li>
+              <li>Wallets and transactions</li>
+              <li>Gas fees and testnets</li>
+            </ul>
+            <p class="best-for"><strong>Best for:</strong> Beginners looking to understand how blockchain and Web3 work.</p>
+            <button class="btn btn-primary btn-block enroll-btn" type="button" data-package="Web3 Foundations" data-price="₦30,000" data-duration="2 weeks" data-classes="4">Enroll now</button>
+          </article>
 
-        <article class="card">
-          <span class="badge">Advanced</span>
-          <h3>Full-Stack Web3 Development</h3>
-          <div class="meta">3 months · 24 classes</div>
-          <div class="price-tag">₦150,000</div>
-          <p class="desc">Go from smart contracts to complete, deployable decentralized applications.</p>
-          <h4>Curriculum</h4>
-          <ul>
-            <li>Everything in Blockchain &amp; Solidity Development</li>
-            <li>React development</li>
-            <li>Wagmi and Viem</li>
-            <li>Smart contract integration</li>
-            <li>dApp development</li>
-            <li>Testing and deployment</li>
-            <li>Final portfolio project</li>
-          </ul>
-          <p class="best-for"><strong>Best for:</strong> Aspiring Web3 developers who want to build, deploy, and showcase full-stack dApps.</p>
-          <button class="btn enroll-btn" type="button" data-package="Full-Stack Web3 Development" data-price="₦150,000" data-duration="3 months" data-classes="24">Enroll Now</button>
-        </article>
+          <article class="plan plan--featured reveal">
+            <div class="plan-top">
+              <span class="level">Intermediate</span>
+              <span class="pop">Most popular</span>
+            </div>
+            <h3 class="plan-name">Blockchain &amp; Solidity Development</h3>
+            <p class="plan-desc">Learn to write, test, and secure smart contracts on Ethereum.</p>
+            <div class="price-row">
+              <span class="currency">₦</span><span class="amount">75,000</span>
+            </div>
+            <p class="plan-meta">2 months · 16 classes</p>
+            <div class="plan-divider" aria-hidden="true"></div>
+            <p class="inc-label">What's included</p>
+            <ul class="features">
+              <li>Everything in Web3 Foundations</li>
+              <li>Solidity programming</li>
+              <li>Smart contracts</li>
+              <li>Remix IDE</li>
+              <li>ERC-20 and ERC-721 concepts</li>
+              <li>Testing and debugging</li>
+              <li>Security fundamentals</li>
+            </ul>
+            <p class="best-for"><strong>Best for:</strong> Learners ready to start building smart contracts and blockchain applications.</p>
+            <button class="btn btn-light btn-block enroll-btn" type="button" data-package="Blockchain &amp; Solidity Development" data-price="₦75,000" data-duration="2 months" data-classes="16">Enroll now</button>
+          </article>
+
+          <article class="plan reveal">
+            <div class="plan-top">
+              <span class="level">Advanced</span>
+            </div>
+            <h3 class="plan-name">Full-Stack Web3 Development</h3>
+            <p class="plan-desc">Go from smart contracts to complete, deployable decentralized applications.</p>
+            <div class="price-row">
+              <span class="currency">₦</span><span class="amount">150,000</span>
+            </div>
+            <p class="plan-meta">3 months · 24 classes</p>
+            <div class="plan-divider" aria-hidden="true"></div>
+            <p class="inc-label">What's included</p>
+            <ul class="features">
+              <li>Everything in Blockchain &amp; Solidity Development</li>
+              <li>React development</li>
+              <li>Wagmi and Viem</li>
+              <li>Smart contract integration</li>
+              <li>dApp development</li>
+              <li>Testing and deployment</li>
+              <li>Final portfolio project</li>
+            </ul>
+            <p class="best-for"><strong>Best for:</strong> Aspiring Web3 developers who want to build, deploy, and showcase full-stack dApps.</p>
+            <button class="btn btn-primary btn-block enroll-btn" type="button" data-package="Full-Stack Web3 Development" data-price="₦150,000" data-duration="3 months" data-classes="24">Enroll now</button>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Questions or Enrollment</h2>
-      <p>
-        Email <a href="mailto:marblestech9@gmail.com">marblestech9@gmail.com</a>
-        or message us on <a href="https://wa.me/2349131157572" target="_blank" rel="noopener">WhatsApp</a>
-        to enroll or request more information.
-      </p>
+    <section class="section" id="compare" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Compare</span>
+          <h2 id="compare-heading">Compare at a glance</h2>
+          <p class="section-sub">Same curriculum, increasing depth — pick the starting point that fits you.</p>
+        </div>
+
+        <div class="table-card reveal">
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Package comparison table">
+            <table class="cmp">
+              <thead>
+                <tr>
+                  <th scope="col">Package</th>
+                  <th scope="col">Level</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Classes</th>
+                  <th scope="col">What you'll learn</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name">Web3 Foundations</td>
+                  <td>Beginner</td>
+                  <td class="price-cell">₦30,000</td>
+                  <td>2 weeks</td>
+                  <td>4</td>
+                  <td>Blockchain fundamentals, Introduction to Web3, Ethereum basics, Wallets and transactions, Gas fees and testnets</td>
+                </tr>
+                <tr>
+                  <td class="name">Blockchain &amp; Solidity Development</td>
+                  <td class="hot">Intermediate</td>
+                  <td class="price-cell hot">₦75,000</td>
+                  <td class="hot">2 months</td>
+                  <td class="hot">16</td>
+                  <td class="hot">Everything in Foundations, Solidity programming, Smart contracts, Remix IDE, ERC-20 and ERC-721 concepts, Testing and debugging, Security fundamentals</td>
+                </tr>
+                <tr>
+                  <td class="name">Full-Stack Web3 Development</td>
+                  <td>Advanced</td>
+                  <td class="price-cell">₦150,000</td>
+                  <td>3 months</td>
+                  <td>24</td>
+                  <td>Everything in Package 2, React development, Wagmi and Viem, Smart contract integration, dApp development, Testing and deployment, Final portfolio project</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="table-hint">Scroll the table sideways to compare all packages →</p>
+      </div>
     </section>
 
-    <footer>
-      Web3 Development Training Pricing
-    </footer>
-  </div>
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <span class="eyebrow eyebrow-light">Contact</span>
+            <h2 id="contact-heading">Not sure which package fits?</h2>
+            <p>Message us and we'll help you choose the right starting point — no pressure, just guidance.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/2349131157572" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+              WhatsApp us
+            </a>
+            <a class="btn btn-outline-light" href="mailto:marblestech9@gmail.com">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 7 7.2 5.2c.6.44 1.4.44 2 0L20.2 7"/></svg>
+              Email us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <div class="modal-overlay" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Marbles Tech — back to top">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-text">Marbles Tech</span>
+        </a>
+        <p>Practical Web3 training — from fundamentals to full-stack dApps.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#pricing">Packages</a>
+        <a href="#compare">Compare</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:marblestech9@gmail.com">marblestech9@gmail.com</a>
+        <a href="https://wa.me/2349131157572" target="_blank" rel="noopener">+234 913 115 7572</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Marbles Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal">
-      <button class="modal-close" id="modalClose" type="button" aria-label="Close">&times;</button>
-      <h3 id="modalTitle">Enroll</h3>
-      <p class="desc">Choose how you'd like to reach us. Your message is pre-filled.</p>
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close dialog">&times;</button>
+      <div class="modal-head">
+        <span class="modal-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6.5c0-.8.7-1.5 1.5-1.5h13c.8 0 1.5.7 1.5 1.5V19"/><path d="M4 19h16"/><path d="M8 19v-5.5h8V19"/><path d="M8 9h1.5M12 9h1.5M15.5 9H16"/></svg>
+        </span>
+        <div>
+          <h3 id="modalTitle">Enroll</h3>
+          <p class="modal-sub">Choose how you'd like to reach us — your message is pre-filled.</p>
+        </div>
+      </div>
+      <div class="chips" id="modalChips"></div>
+      <p class="msg-label">Your message</p>
       <div class="msg" id="modalMessage"></div>
       <div class="modal-actions">
-        <a class="btn btn-whatsapp" id="waLink" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-        <a class="btn btn-email" id="mailLink" href="#">Send via Email</a>
+        <a class="btn btn-whatsapp" id="waLink" href="#" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+          Send on WhatsApp
+        </a>
+        <a class="btn btn-email" id="mailLink" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 7 7.2 5.2c.6.44 1.4.44 2 0L20.2 7"/></svg>
+          Send via Email
+        </a>
       </div>
     </div>
   </div>
@@ -378,12 +1220,16 @@
     (function () {
       var PHONE = '2349131157572';
       var EMAIL = 'marblestech9@gmail.com';
+
       var overlay = document.getElementById('enrollModal');
+      var modal = overlay.querySelector('.modal');
       var title = document.getElementById('modalTitle');
+      var chips = document.getElementById('modalChips');
       var msgEl = document.getElementById('modalMessage');
       var waLink = document.getElementById('waLink');
       var mailLink = document.getElementById('mailLink');
       var closeBtn = document.getElementById('modalClose');
+      var lastFocused = null;
 
       function buildMessage(pkg) {
         return 'Hello Marbles Tech! I would like to enroll in the ' + pkg.name +
@@ -399,17 +1245,35 @@
           classes: btn.getAttribute('data-classes')
         };
         var message = buildMessage(pkg);
+
         title.textContent = 'Enroll in ' + pkg.name;
         msgEl.textContent = message;
+        chips.textContent = '';
+
+        [pkg.price, pkg.duration, pkg.classes + ' classes'].forEach(function (label) {
+          var chip = document.createElement('span');
+          chip.className = 'chip';
+          chip.textContent = label;
+          chips.appendChild(chip);
+        });
+
         waLink.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(message);
         mailLink.href = 'mailto:' + EMAIL +
           '?subject=' + encodeURIComponent('Enrollment: ' + pkg.name) +
           '&body=' + encodeURIComponent(message);
+
+        lastFocused = btn;
         overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+        closeBtn.focus();
       }
 
       function closeModal() {
         overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+        if (lastFocused) { lastFocused.focus(); }
       }
 
       document.querySelectorAll('.enroll-btn').forEach(function (btn) {
@@ -417,12 +1281,55 @@
       });
 
       closeBtn.addEventListener('click', closeModal);
+
       overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeModal();
+        if (e.target === overlay) { closeModal(); }
       });
+
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
+        if (!overlay.classList.contains('open')) { return; }
+
+        if (e.key === 'Escape') { closeModal(); }
+
+        if (e.key === 'Tab') {
+          var focusable = modal.querySelectorAll('button, a[href]');
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       });
+
+      var header = document.getElementById('siteHeader');
+      function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      var year = document.getElementById('year');
+      if (year) { year.textContent = String(new Date().getFullYear()); }
     })();
   </script>
 </body>
