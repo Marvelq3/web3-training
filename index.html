@@ -14,40 +14,33 @@
   <meta name="twitter:title" content="Web3 Development Training — Pricing">
   <meta name="twitter:description" content="Beginner to advanced Web3 packages: blockchain foundations, Solidity smart contracts, and full-stack dApp development.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%234f46e5'/><path d='M18 46V18h6l8 12 8-12h6v28h-6V30l-8 12-8-12v16z' fill='white'/></svg>">
-  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-naira.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/sora-subset.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     @font-face {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400 700;
       font-display: swap;
-      src: url('fonts/inter-latin-ext.woff2') format('woff2');
-      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      src: url('fonts/inter-subset.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+2013-2014, U+2018-201D, U+2022, U+2026, U+2190-2193, U+2212, U+2713-2714;
     }
     @font-face {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400 700;
       font-display: swap;
-      src: url('fonts/inter-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      src: url('fonts/inter-naira.woff2') format('woff2');
+      unicode-range: U+20A6;
     }
     @font-face {
       font-family: 'Sora';
       font-style: normal;
       font-weight: 700 800;
       font-display: swap;
-      src: url('fonts/sora-latin-ext.woff2') format('woff2');
-      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    @font-face {
-      font-family: 'Sora';
-      font-style: normal;
-      font-weight: 700 800;
-      font-display: swap;
-      src: url('fonts/sora-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      src: url('fonts/sora-subset.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+2013-2014, U+2018-201D, U+2022, U+2026, U+2190-2193, U+2212, U+2713-2714;
     }
 
     :root {
@@ -1004,8 +997,8 @@
     }
 
     @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: none; }
+      from { transform: translateY(14px); }
+      to { transform: none; }
     }
     .hero .eyebrow,
     .hero h1,
